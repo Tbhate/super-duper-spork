@@ -62,3 +62,10 @@ document.querySelectorAll('.side-menu a').forEach(link => {
     });
   });
 });
+
+
+const btn = document.querySelector('.btn-video');
+
+btn.addEventListener('click', () => {
+  btn.classList.toggle('pause');
+});
