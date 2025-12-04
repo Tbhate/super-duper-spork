@@ -1,11 +1,19 @@
-  const burger = document.querySelector('.burger');
-  const menu = document.querySelector('.side-menu');
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.side-menu');
 
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('active');  
-    menu.classList.toggle('active');   
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');  
+  menu.classList.toggle('active');   
+});
+
+const menuLinks = document.querySelectorAll('.side-menu a');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');  
+    burger.classList.remove('active'); 
   });
-
+});
 
   const slider = document.querySelector('.result-wrapper');
 const slides = document.querySelectorAll('.result-list li');
@@ -15,11 +23,42 @@ slider.addEventListener('scroll', () => {
   const scrollLeft = slider.scrollLeft;
   const slideWidth = slides[0].offsetWidth;
 
-  // Находим индекс текущего слайда
   const index = Math.round(scrollLeft / slideWidth);
 
-  // Убираем active у всех точек
   dots.forEach(dot => dot.classList.remove('active'));
-  // Добавляем active к текущей
   dots[index].classList.add('active');
+});
+
+
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollBtn.style.display = 'flex';
+  } else {
+    scrollBtn.style.display = 'none';
+  }
+});
+
+
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+document.querySelectorAll('.side-menu a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault(); 
+    const targetId = link.getAttribute('href').substring(1);
+    const target = document.getElementById(targetId);
+    const offset = 70; 
+    const topPos = target.offsetTop - offset;
+
+    window.scrollTo({
+      top: topPos,
+      behavior: 'smooth'
+    });
+  });
 });
