@@ -700,10 +700,16 @@ body {
 }
 .slider-dots-text{
   padding-top: 22px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 11px;
+
+}
+@media (max-width: 600px) {
+.slider-dots-text{
+  display: flex;
+}
 
 }
 .slider-dots-text p{
