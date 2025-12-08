@@ -164,6 +164,19 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
   display: flex;
+   position: relative; 
+  overflow: hidden; 
+}
+.contact-btn::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); 
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
 }
 
 .contact-btn:hover {
@@ -338,7 +351,27 @@ body {
   transition: transform 0.2s, background-color 0.2s;
   cursor: pointer;
   gap: 10px;
+  position: relative; 
+  overflow: hidden; 
 }
+
+.sec-btnn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); 
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
 .sec-btnn:hover {
   transform: scale(1.05);
 }
@@ -1188,6 +1221,19 @@ body {
   transition: transform 0.2s, background-color 0.2s;
   cursor: pointer;
   gap: 8px;
+  position: relative; 
+  overflow: hidden; 
+}
+.calc-btnn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); 
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
 }
 .calc-btnn:hover {
   transform: scale(1.05);
@@ -1265,7 +1311,7 @@ body {
     padding-top: 20px;
 
 
-    max-width: 347px;
+    max-width: 360px;
     height: 610px;
     border-radius: 42px;
     justify-content: center;
@@ -1425,6 +1471,19 @@ footer {
   border-radius: 20px;
   cursor: pointer;
   transition: transform 0.2s;
+  position: relative; 
+  overflow: hidden; 
+}
+.footer-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); 
+  transform: skewX(-20deg);
+  animation: shimmer 2s infinite;
 }
 
 .footer-btn:hover {
