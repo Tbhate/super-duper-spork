@@ -926,11 +926,59 @@ body {
 
 /*  */
 .services {
+  position: relative; /* нужно для ::before */
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+.services::before {
+  overflow: hidden; /* чтобы закругления были видны */
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+   width: calc(100% - 64px); /* 32px справа + 32px слева */
+  max-width: 1856px;
+  height: 65%;
+
+  background-image: url("./image/bgphotoresult.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  border-radius: 114px;  /* регулируй */
+
+  z-index: -1; /* чтобы контент был сверху */
+}
+
+@media (max-width: 600px){
+  .services::before {
+  content: "";
+  position: absolute;
+  top: -38%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100%;
+  height: 65%;
+
+  background-image: url("./image/bgphotoresult.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  border-radius: 42px;  /* регулируй */
+
+  z-index: -1; /* чтобы контент был сверху */
+}
+}
+
 .services-grid {
+  padding-left: 10px;
+  padding-right: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -960,7 +1008,7 @@ body {
 }
 .services-title {
   margin-top: 80px;
-  color: #000;
+  color: #fbfbfb;
   font-weight: 500;
   font-size: 49px;
   letter-spacing: -0.04em;
@@ -1148,6 +1196,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 110px;
+  z-index: 2;
 }
 .result-container {
   display: flex;
@@ -1157,10 +1206,10 @@ body {
   max-width: 1856px;
   padding: 94px;
   height: 844px;
-  background-image: url("./image/bgphotoresult.png");
+  /* background-image: url("./image/bgphotoresult.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 .resul-title {
@@ -1187,27 +1236,27 @@ body {
   max-width: 666px;
   width: 100%;
   height: 116px;
-  border: 1px dashed #fbfbfb;
+  border: 1px dashed #000;
   border-radius: 122px;
   font-weight: 400;
   font-size: 30px;
-  color: #fbfbfb;
+  color: #000;
 }
 .result-mtext {
-  color: #fbfbfb;
+  color: #000;
   font-weight: 600;
   font-size: 63px;
   letter-spacing: -0.06em;
 }
 .result-container li p {
-  color: #fbfbfbcc;
+  color: #000;
   font-weight: 400;
   font-size: 32px;
   letter-spacing: -0.06em;
 }
 .result-container li p span {
   font-weight: 600;
-  color: #fbfbfb;
+  color: #000;
 }
 .result-container ul {
   display: flex;
@@ -1221,7 +1270,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #FDF4F4;
   max-width: 958px;
   width: 100%;
   max-height: 653px;
@@ -1367,7 +1416,6 @@ body {
     height: 610px;
     border-radius: 42px;
     justify-content: center;
-    background-image: url("./image/bgimage.png");
   }
   .resul-title {
     width: 100px;
@@ -1402,6 +1450,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     padding: 25px;
+    background-color: #fff;
   }
   .result-sec {
     padding-top: 70px;
@@ -1456,6 +1505,7 @@ footer {
   justify-content: center;
 }
 .foot-section {
+  padding-top: 68px;
   width: 100%;
   max-width: 1656px;
 }
