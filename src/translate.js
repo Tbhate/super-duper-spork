@@ -75,6 +75,9 @@ const translations = {
     "f.10": "Настройки cookies",
     "f.11": "Условия предоставления услуг",
     "f.12": "Информация об администраторе данных",
+  
+    "g.1": "Наши проекты",
+
   },
 
   pl: {
@@ -151,6 +154,9 @@ const translations = {
     "f.10": "Ustawienia cookies",
     "f.11": "Warunki świadczenia usług",
     "f.12": "Informacje o administratorze danych",
+    
+    "g.1": "Nasze projekty",
+
   },
 
   uk: {
@@ -227,6 +233,9 @@ const translations = {
     "f.10": "Налаштування cookies",
     "f.11": "Умови надання послуг",
     "f.12": "Інформація про адміністратора даних",
+
+    "g.1": "Наші проекти",
+
   },
 
 };
