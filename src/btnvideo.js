@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let userPaused = false; // ← ВАЖНО
 
+  // Включаем цикличное воспроизведение
+  player.setLoop(true);
+
   /* клик по кнопке */
   btn.addEventListener('click', () => {
     player.getPaused().then(paused => {
@@ -34,5 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.remove('pause', 'hidden');
   });
 
- 
+  // Автоматический старт
+  player.play().catch(err => console.error('Ошибка воспроизведения:', err));
 });
