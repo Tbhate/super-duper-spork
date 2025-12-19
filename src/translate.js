@@ -2,6 +2,8 @@ const translations = {
   ru: {
     "q.01": "Листайте влево / вправо",
 
+    "q1.1": "Мы делаем проект <span>быстро  <br class='br-s' />и по доступной цене.</span>",
+    "q1.2": " <span>Строительство начинается <br class='br-s' />не с фундамента—</span> а с проекта.",
 
     "why.title": "Почему с нами выгоднее?",
     "why.standard": "Стандартный проект в Польше стоит от 60 000 zł и занимает 6+ месяцев",
@@ -81,6 +83,10 @@ const translations = {
   },
 
   pl: {
+    
+    "q1.1": "Realizujemy projekt <span>szybko <br class='br-s' />i w przystępnej cenie.</span>",
+    "q1.2": "<span>Budowa nie zaczyna się<br class='br-s' /> od fundamentów, </span>ale od projektu.",
+
     "q.01": "Przewijaj w lewo / w prawo",
 
     "why.title": "Dlaczego my się opłaca?",
@@ -160,6 +166,11 @@ const translations = {
   },
 
   uk: {
+
+    
+    "q1.1": "Ми робимо проект <span> швидко <br class='br-s' />і за доступною ціною</span>.",
+    "q1.2": " <span>Будівництво починається <br class='br-s' />не з фундаменту —</span> а з проекту.",
+
     "q.01": "Перегортайте вліво / вправо",
 
     "why.title": "Чому з нами вигідніше?",
