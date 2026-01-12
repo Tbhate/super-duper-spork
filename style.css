@@ -2128,3 +2128,76 @@ footer {
     width: 90%;
   }
 }
+
+
+/* МОДАЛКА */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* КОНТЕНТ МОДАЛКИ */
+.modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 14px;
+  position: relative;
+  font-family: system-ui, sans-serif;
+}
+
+/* КНОПКА ЗАКРЫТИЯ */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ЗАГОЛОВОК */
+.modal-content h2 {
+  margin-bottom: 18px;
+}
+
+/* ФОРМА */
+#tgForm input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+#tgForm button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#tgForm button[type="submit"]:hover {
+  background: #333;
+}
+
+/* КОНТАКТНЫЙ НОМЕР */
+.contact-info {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}

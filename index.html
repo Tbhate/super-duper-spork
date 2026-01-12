@@ -79,7 +79,7 @@
               >
             </li>
             <li>
-              <button class="burger-btn">
+              <button class="burger-btn open-modal-btn">
                 <svg class="phone-svg">
                   <use href="./image/house.svg"></use>
                 </svg>
@@ -94,7 +94,7 @@
           </ul>
         </div>
 
-        <button class="contact-btn">
+        <button class="contact-btn open-modal-btn">
           <svg class="phone-svg">
             <use href="./image/house.svg"></use>
           </svg>
@@ -159,7 +159,7 @@
               </div>
             </div>
             <div class="button-container">
-              <button class="sec-btnn">
+              <button class="sec-btnn open-modal-btn">
                 <p data-i18n="q.10">Оставить заявку</p>
                 <img class="header-svg" src="./image/stick.svg" alt="" />
               </button>
@@ -195,7 +195,7 @@
                 Мы делаем это <br /><span>быстрей и дешевле</span>
               </p>
             </div>
-            <button class="sec-btnn">
+            <button class="sec-btnn open-modal-btn">
               <p data-i18n="q.10">Оставить заявку</p>
               <img class="header-svg" src="./image/stick.svg" alt="" />
             </button>
@@ -401,7 +401,7 @@
                   <span class="span-calc">в течение суток.</span>
                 </p>
               </div>
-              <button class="calc-btnn">
+              <button class="calc-btnn open-modal-btn">
                 <p data-i18n="q.31">Оставить заявку</p>
                 <img class="header-svg" src="./image/stick.svg" alt="" />
               </button>
@@ -740,7 +740,7 @@
                   <span class="span-calc">в течение суток.</span>
                 </p>
               </div>
-              <button class="calc-btnn">
+              <button class="calc-btnn open-modal-btn">
                 <p data-i18n="q.31">Оставить заявку</p>
                 <img class="header-svg" src="./image/stick.svg" alt="" />
               </button>
@@ -804,7 +804,7 @@
           </div>
 
           <div class="sec-cont-sblock">
-            <button class="footer-btn" data-i18n="f.9">Контакты</button>
+            <button class="footer-btn open-modal-btn" data-i18n="f.9">Контакты</button>
 
             <ul class="header-nav-list-transl foot">
               <li><button class="transl-btn" data-lang="pl">PL</button></li>
@@ -816,17 +816,17 @@
           <div class="sec-cont-tblock">
             <ul>
               <li>
-                <a class="tr-nav-text" href="" data-i18n="f.10"
+                <a class="tr-nav-text" href="./cookies.html" data-i18n="f.10"
                   >Настройки cookies</a
                 >
               </li>
               <li>
-                <a class="tr-nav-text" href="" data-i18n="f.11"
+                <a class="tr-nav-text" href="./services.html" data-i18n="f.11"
                   >Условия предоставления услуг</a
                 >
               </li>
               <li>
-                <a class="tr-nav-text" href="" data-i18n="f.12"
+                <a class="tr-nav-text" href="./admindata.html" data-i18n="f.12"
                   >Информация об администраторе данных</a
                 >
               </li>
@@ -836,8 +836,36 @@
       </section>
       <img class="footer-stick" src="./image/footer.png" alt="" />
     </footer>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <button class="close-btn">×</button>
+
+        <h2>Оставить заявку</h2>
+
+        <form id="tgForm">
+          <input type="text" name="name" placeholder="Имя" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Номер телефона *"
+            required
+          />
+          <input type="text" name="telegram" placeholder="Telegram (@name)" />
+          <input type="email" name="email" placeholder="Email" />
+
+          <button type="submit">Отправить</button>
+        </form>
+
+        <p class="contact-info">
+          Или позвоните нам:<br />
+          <strong>+38 (099) 123-45-67</strong>
+        </p>
+      </div>
+    </div>
+
     <button id="scrollTopBtn" title="Наверх">↑</button>
     <script src="./src/index.js"></script>
+    <script src="./src/form.js"></script>
     <script src="./src/translate.js"></script>
     <script src="./src/animation.js"></script>
     <script src="./src/btnvideo.js"></script>
