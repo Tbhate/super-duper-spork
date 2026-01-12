@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Отправка формы в Telegram
- const TOKEN = "7602748936:AAFpWAZHX7yMrjXVEmPvWwdQ-hOnyZ35cIA";
+ const TOKEN = "8570279102:AAEUqbMkM8ggPv_HzFhj01hB8Lma9xNT8iA";
 const CHAT_ID = "-1003480486593";
 
   document.getElementById("tgForm").addEventListener("submit", function(e) {
