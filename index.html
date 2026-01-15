@@ -175,7 +175,7 @@
             <div class="video-box">
               <iframe
                 id="vimeo-player"
-                src="https://player.vimeo.com/video/1147707959?controls=0&title=0&byline=0&portrait=0"
+                src="https://player.vimeo.com/video/1154272150?controls=0&title=0&byline=0&portrait=0"
                 frameborder="0"
                 allow="autoplay; fullscreen"
               ></iframe>
@@ -636,6 +636,8 @@
           <div class="img-modal" id="imgModal">
             <span class="img-modal-close">&times;</span>
             <img id="imgModalContent" alt="" />
+              <button class="img-modal-prev">‹</button>
+             <button class="img-modal-next">›</button>
           </div>
 
           <div class="gal-preblock">
@@ -804,7 +806,9 @@
           </div>
 
           <div class="sec-cont-sblock">
-            <button class="footer-btn open-modal-btn" data-i18n="f.9">Контакты</button>
+            <button class="footer-btn open-modal-btn" data-i18n="f.9">
+              Контакты
+            </button>
 
             <ul class="header-nav-list-transl foot">
               <li><button class="transl-btn" data-lang="pl">PL</button></li>
@@ -840,23 +844,30 @@
       <div class="modal-content">
         <button class="close-btn">×</button>
 
-        <h2>Оставить заявку</h2>
+        <h2 data-i18n="form1">Оставить заявку</h2>
 
         <form id="tgForm">
-          <input type="text" name="name" placeholder="Имя" required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Имя"
+            data-i18n-placeholder="name_placeholder"
+            required
+          />
           <input
             type="tel"
             name="phone"
             placeholder="Номер телефона *"
+            data-i18n-placeholder="phone_placeholder"
             required
           />
           <input type="text" name="telegram" placeholder="Telegram (@name)" />
           <input type="email" name="email" placeholder="Email" />
 
-          <button type="submit">Отправить</button>
+          <button type="submit" data-i18n="form2">Отправить</button>
         </form>
 
-        <p class="contact-info">
+        <p class="contact-info" data-i18n="form3">
           Или позвоните нам:<br />
           <strong>+38 (099) 123-45-67</strong>
         </p>

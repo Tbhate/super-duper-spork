@@ -1,5 +1,11 @@
 const translations = {
   ru: {
+    "form1": "Оставить заявку",
+    "form2": "Отправить",
+    "form3": "Или позвоните нам:<br /><strong>+38 (099) 123-45-67</strong>",
+     "name_placeholder": "Имя",
+    "phone_placeholder":  "Номер телефона *",
+
     "q.01": "Листайте влево / вправо",
 
     "q1.1": "Мы делаем проект <span>быстро  <br class='br-s' />и по доступной цене.</span>",
@@ -83,7 +89,13 @@ const translations = {
   },
 
   pl: {
-    
+    "form1": "Prześlij żądanie",
+    "form2": "Wysłać",
+    "form3": "Lub zadzwoń do nas:<br /><strong>+38 (099) 123-45-67</strong>",
+     "name_placeholder": "Nazwa",
+    "phone_placeholder":  "Numer telefonu *",
+
+
     "q1.1": "Realizujemy projekt <span>szybko <br class='br-s' />i w przystępnej cenie.</span>",
     "q1.2": "<span>Budowa nie zaczyna się<br class='br-s' /> od fundamentów, </span>ale od projektu.",
 
@@ -166,7 +178,11 @@ const translations = {
   },
 
   uk: {
-
+    "form1": "Залишити заявку",
+    "form2": "Надіслати",
+    "form3": "Або зателефонуйте нам:<br /><strong>+38 (099) 123-45-67</strong>",
+ "name_placeholder": "Ім'я",
+    "phone_placeholder":  "Номер телефону *",
     
     "q1.1": "Ми робимо проект <span> швидко <br class='br-s' />і за доступною ціною</span>.",
     "q1.2": " <span>Будівництво починається <br class='br-s' />не з фундаменту —</span> а з проекту.",
@@ -258,7 +274,17 @@ function translatePage(lang) {
       el.innerHTML = translations[lang][key];
     }
   });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
 }
+
+
+
 document.querySelectorAll(".transl-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const lang = btn.dataset.lang;

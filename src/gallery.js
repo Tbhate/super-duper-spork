@@ -2,39 +2,38 @@ const galleryContainer = document.querySelector('.gallery-container');
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 
-// Ширина одного "шага" прокрутки — ширина видимого блока
-const scrollStep = galleryContainer.clientWidth * 0.85; // 85% peek
+const scrollStep = galleryContainer.clientWidth * 0.85;
 
 nextBtn.addEventListener('click', () => {
-  galleryContainer.scrollBy({
-    left: scrollStep,
-    behavior: 'smooth'
-  });
+  galleryContainer.scrollBy({ left: scrollStep, behavior: 'smooth' });
 });
 
 prevBtn.addEventListener('click', () => {
-  galleryContainer.scrollBy({
-    left: -scrollStep,
-    behavior: 'smooth'
-  });
+  galleryContainer.scrollBy({ left: -scrollStep, behavior: 'smooth' });
 });
 
 
-// open photo 
-
+// open photo + SLIDER
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('imgModal');
   const modalImg = document.getElementById('imgModalContent');
   const closeBtn = document.querySelector('.img-modal-close');
 
-  document.querySelectorAll('.gallery-item img').forEach(img => {
+  // новые кнопки модалки
+  const modalPrevBtn = document.querySelector('.img-modal-prev');
+  const modalNextBtn = document.querySelector('.img-modal-next');
+
+  const images = Array.from(document.querySelectorAll('.gallery-item img'));
+
+  let currentIndex = 0;
+
+  // открытие картинки
+  images.forEach((img, index) => {
     img.addEventListener('click', () => {
+      currentIndex = index;
       modal.style.display = 'flex';
       modalImg.src = img.src;
-
-      // даём браузеру отрисовать display:flex
       setTimeout(() => modal.classList.add('active'), 10);
-
       document.body.style.overflow = 'hidden';
     });
   });
@@ -48,8 +47,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   }
 
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  // слушатели модалки
   closeBtn.addEventListener('click', closeModal);
+
+  if (modalNextBtn) modalNextBtn.addEventListener('click', nextImage);
+  if (modalPrevBtn) modalPrevBtn.addEventListener('click', prevImage);
+
+  // закрытие по фону
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
+  });
+
+  // клавиатура
+  document.addEventListener('keydown', e => {
+    if (modal.style.display !== 'flex') return;
+
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') closeModal();
   });
 });
